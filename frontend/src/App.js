@@ -14,6 +14,20 @@ import '@assenti/rui-components/css/index.css';
 const { Head, Body, Row, Cell } = TableSimple;
 
 
+
+const getPredictedData = async (pm25,no2,co,so2,o3) => {
+  const response = await fetch('http://127.0.0.1:8000/predict', {
+    method:'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({pm25,no2,co,so2,o3})
+  });
+
+  const result = await response.json();
+  console.log(result);
+  return result;
+}
 const NotificationAndPredictionCard = ({ predictedAqi }) => (
   <Card style={{ padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
     <p><i>Subscribe to our Telegram bot<br/> to get notification</i></p>
@@ -44,6 +58,7 @@ const App = () => {
   const [city, setCity] = useState('');
   const [pollutant, setPollutant] = useState(defaultPollutant);
   const [tracker, setTracker] = useState(defaultTracker);
+  const [predictedAqi, setPredictedAqi] = useState([0]);
 
   
   useEffect(() => {
@@ -60,6 +75,10 @@ const App = () => {
       setPollutant(defaultPollutant);
       setTracker(defaultTracker);
     });
+    getPredictedData(167,9,8,10,3).then((data) => {
+      setPredictedAqi(data);
+      // console.log("predicted:",data);
+    })
 
   }, [city]);
 
@@ -87,8 +106,8 @@ const App = () => {
           {DashboardCard("Air Pollution Level", tracker.epa_health_concern, "shield-account", "green")}
           {DashboardCard("Air Quality Index", tracker.epa_aqi, "heart", "red")}
           {DashboardCard("Main Pollutants", tracker.epa_primary_pollutant, "delete", "black")}
-          {DashboardCard(<AqiGauge aqi={350}/>)}
-          <NotificationAndPredictionCard predictedAqi={350} />
+          {DashboardCard(<AqiGauge aqi={predictedAqi}/>)}
+          <NotificationAndPredictionCard predictedAqi={predictedAqi} />
           </List>
           <p></p>
 
