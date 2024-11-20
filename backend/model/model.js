@@ -17,6 +17,15 @@ const dataReceieved= new mongoose.Schema({
     nh3: {
         type: Number,
     },
+    no2: {
+        type: Number,
+    },
+    o3: {
+        type: Number,
+    },
+    so2: {
+        type: Number,
+    },
     timestamp: {
         type: Date,
         default: Date.now

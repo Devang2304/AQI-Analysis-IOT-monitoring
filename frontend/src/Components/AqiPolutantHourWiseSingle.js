@@ -9,13 +9,13 @@ export const AqiPolutantHourWiseSingle = () => {
   
       const option = {
         title: {
-          text: 'Stacked Line'
+          text: 'AQI Polutant Hourwise'
         },
         tooltip: {
           trigger: 'axis'
         },
         legend: {
-          data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+          data: ['PM2.5', 'NO2', 'CO', 'SO2', 'O3']
         },
         grid: {
           left: '3%',

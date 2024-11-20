@@ -9,7 +9,7 @@ export const AqiYearWiseComparison = () => {
   
       const option = {
         title: {
-          text: 'Stacked Line'
+          text: 'AQI Year Wise Comparison'
         },
         tooltip: {
           trigger: 'axis'

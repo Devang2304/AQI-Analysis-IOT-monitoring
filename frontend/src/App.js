@@ -9,6 +9,7 @@ import {AqiGauge} from './Components/AqiGauge';
 import {AqiYearWiseComparison} from './Components/AqiYearWiseComparison';
 import { MLnCaculatedComparison } from './Components/MLnCaculatedComparison';
 import { PollutantHeatMap } from './Components/PollutantHeatMap';
+import { PollutionMap } from './Components/PollutionMap';
 import aqiData from './data/aqi-beijing.json';
 import '@assenti/rui-components/css/index.css';
 const { Head, Body, Row, Cell } = TableSimple;
@@ -167,6 +168,10 @@ const App = () => {
     <div>
     <h1>AQI HeatMap</h1>
     {<PollutantHeatMap/>}
+  </div>
+  <div>
+    <h1>AQI India Map</h1>
+    {<PollutionMap/>}
   </div>
       </>
   );
