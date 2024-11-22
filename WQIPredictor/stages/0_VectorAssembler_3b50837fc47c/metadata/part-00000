@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.VectorAssembler","timestamp":1732225204479,"sparkVersion":"3.5.3","uid":"VectorAssembler_3b50837fc47c","paramMap":{"outputCol":"features","inputCols":["npH","ndo","nec","nna"]},"defaultParamMap":{"outputCol":"VectorAssembler_3b50837fc47c__output","handleInvalid":"error"}}

@@ -1,0 +1,16 @@
+[
+{
+    "Id": 1,
+    "Location": "Maharashtra",
+    "WQI": "103",
+    "Latitude": 19.601194,
+    "Longitude": 75.552979
+  },
+  {
+    "Id": 2,
+    "Location": "Kerala",
+    "WQI": "50",
+    "Latitude": 10.850516,
+    "Longitude": 76.27108
+  }
+]
